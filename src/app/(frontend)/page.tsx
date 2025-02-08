@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url'
 
 import config from '@/payload.config'
 import './styles.css'
+import { Button } from '@/components/ui/button'
 
 export default async function HomePage() {
   const headers = await getHeaders()
@@ -27,25 +28,19 @@ export default async function HomePage() {
             width={65}
           />
         </picture>
-        {!user && <h1>Bencom Admin Dashboard</h1>}
+        {!user && <h1>Bencom Blog</h1>}
         {user && <h1>Welcome, {user.username}</h1>}
-        <div className="links">
-          <a
-            className="admin"
-            href={payloadConfig.routes.admin}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Go to admin panel
-          </a>
-          <a
-            className="docs"
-            href="https://payloadcms.com/docs"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Documentation
-          </a>
+        <div>
+          <Button>
+            <a
+              className="admin"
+              href={payloadConfig.routes.admin}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Admin Panel
+            </a>
+          </Button>
         </div>
       </div>
       <div className="footer"></div>
