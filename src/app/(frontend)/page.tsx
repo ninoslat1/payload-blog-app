@@ -28,7 +28,7 @@ export default async function HomePage() {
           />
         </picture>
         {!user && <h1>Bencom Admin Dashboard</h1>}
-        {user && <h1>Selamat datang, {user.email}</h1>}
+        {user && <h1>Welcome, {user.username}</h1>}
         <div className="links">
           <a
             className="admin"
