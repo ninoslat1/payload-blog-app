@@ -27,8 +27,8 @@ export default async function HomePage() {
             width={65}
           />
         </picture>
-        {!user && <h1>Welcome to your new project.</h1>}
-        {user && <h1>Welcome back, {user.email}</h1>}
+        {!user && <h1>Bencom Admin Dashboard</h1>}
+        {user && <h1>Selamat datang, {user.email}</h1>}
         <div className="links">
           <a
             className="admin"
@@ -48,12 +48,7 @@ export default async function HomePage() {
           </a>
         </div>
       </div>
-      <div className="footer">
-        <p>Update this page by editing</p>
-        <a className="codeLink" href={fileURL}>
-          <code>app/(frontend)/page.tsx</code>
-        </a>
-      </div>
+      <div className="footer"></div>
     </div>
   )
 }
