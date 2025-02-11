@@ -18,14 +18,8 @@ export const Posts: CollectionConfig = {
       required: true,
     },
     {
-      name: 'author',
-      type: 'relationship',
-      relationTo: 'users',
-      required: true,
-    },
-    {
       name: 'content',
-      type: 'textarea',
+      type: 'richText',
       required: true,
     },
     {
@@ -33,5 +27,23 @@ export const Posts: CollectionConfig = {
       type: 'upload',
       relationTo: 'media',
     },
+    {
+      name: 'author',
+      type: 'text',
+      required: true,
+      admin: {
+        readOnly: true,
+      },
+    },
   ],
+  hooks: {
+    beforeChange: [
+      ({ req, data }) => {
+        return {
+          ...data,
+          author: req.user && req.user.username,
+        }
+      },
+    ],
+  },
 }

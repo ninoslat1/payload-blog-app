@@ -28,7 +28,8 @@ export default async function HomePage() {
             width={65}
           />
         </picture>
-        {!user && <h1>Bencom Blog</h1>}
+        <p>Welcome to</p>
+        <h1>Writ</h1>
         {user && <h1>Welcome, {user.username}</h1>}
         <div>
           <Button>

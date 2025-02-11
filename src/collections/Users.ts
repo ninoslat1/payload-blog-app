@@ -14,6 +14,12 @@ export const Users: CollectionConfig = {
     maxLoginAttempts: 5,
     lockTime: 600 * 1000,
   },
+  access: {
+    read: ({ req }) => req.user?.email === process.env.ADMIN_EMAIL,
+    create: ({ req }) => req.user?.email === process.env.ADMIN_EMAIL,
+    update: ({ req }) => req.user?.email === process.env.ADMIN_EMAIL,
+    delete: () => false,
+  },
   fields: [
     {
       name: 'username',
